@@ -105,9 +105,7 @@ WHERE models2.model_title = car_models3.model_title
   AND models2.model_code = car_models3.model_code
   AND years2.year = car_models3.year;
 
--- SELECT * FROM Manufacturers;
-SELECT * FROM models limit 50;
-SELECT * FROM manufacturers limit 71;
+
 
 -- get a list of all make_title values in the car_models table.
 -- SELECT make_title
@@ -120,12 +118,22 @@ SELECT * FROM manufacturers limit 71;
 -- ON manufacturers.id = models.manufacturer
 -- WHERE manufacturers.make_code = 'VOLKS';
 
-SELECT manufacturers.make_code, models.model_code, models.model_title, years.year
+-- SELECT manufacturers.make_code, models.model_code, models.model_title, years.year
+-- FROM manufacturers
+-- INNER JOIN models
+-- ON manufacturers.id = models.manufacturer
+-- AND manufacturers.make_code = 'LAM'
+-- INNER JOIN car_model_years
+-- ON car_model_years.model = models.id
+-- INNER JOIN years
+-- ON car_model_years.year = years.id;
+
+SELECT *
 FROM manufacturers
 INNER JOIN models
 ON manufacturers.id = models.manufacturer
-AND manufacturers.make_code = 'LAM'
 INNER JOIN car_model_years
 ON car_model_years.model = models.id
 INNER JOIN years
-ON car_model_years.year = years.id;
+ON car_model_years.year = years.id
+WHERE years.year between 2010 AND 2015;
