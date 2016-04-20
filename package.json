@@ -4,7 +4,7 @@
   "description": "### DB Modeling Exercise in PostgreSQL",
   "main": "index.js",
   "scripts": {
-     "watch": "nodemon -e sql --exec psql -f denormal_cars.sql"
+     "watch": "nodemon -e sql --exec psql -f normal_cars.sql"
   },
   "repository": {
     "type": "git",
